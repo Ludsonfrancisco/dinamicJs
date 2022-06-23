@@ -1064,7 +1064,7 @@ document.getElementById('button').addEventListener('click', () => {
 
                     const btnProducao = document.createElement('button')
                     btnProducao.id = 'btnDonwload'
-                    btnProducao.innerHTML = 'DOWNLOAD'
+                    btnProducao.innerHTML = 'BAIXAR IMAGEM'
                     const btnProducao2 = document.getElementById('div-download')
                     btnProducao2.append(btnProducao)
                
