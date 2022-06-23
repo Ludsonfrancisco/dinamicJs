@@ -28,14 +28,15 @@ body{
   padding: 10px 0;
 }
 
-#producao h1{
+/* #producao h1{
   text-align: center;
   font-size: 36px;
-  color: #F15412;
+  background-color: #F15412;
+  color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   margin: 15px 0 0 0;
-}
+} */
 
 #tabela-gpon {
   grid-area: tabela-gpon;
