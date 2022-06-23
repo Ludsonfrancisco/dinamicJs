@@ -162,7 +162,7 @@ canvas{
   font-family: 'Roboto', sans-serif;
   background-color: rgb(62, 0, 0);
   border-radius: 3px;
-  padding: 4px 0;
+  /* padding: 4px 0; */
   text-align: center;
   color: #fff;
 }
@@ -242,7 +242,7 @@ canvas{
     font-family: 'Roboto', sans-serif;
     background-color: rgb(62, 0, 0);
     border-radius: 2px;
-    padding: 4px 0;
+    /* padding: 4px 0; */
     text-align: center;
     color: #fff;
   }
