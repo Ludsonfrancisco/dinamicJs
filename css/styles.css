@@ -224,8 +224,32 @@ canvas{
   color: white;
 } 
 
+@media screen and (min-width: 1000px) and (max-width: 1368px){
+  #canvasDown {
+    display: grid;
+    grid-template-areas:
+        'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
+        'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
+        'tabela-metalico tabela-metalico test test'
+        'tabela-metalico tabela-metalico test test';
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 109px 145px 90px 100px;
+    inline-size: 60%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+  #tabela-gpon td, #tabela-metalico td, #tabela-preventiva td {
+    height: 20px;
+    padding: 2px 2px;
+  }
 
-@media (max-width: 1270px){
+
+}
+
+
+
+@media (max-width: 999px){
   #canvasDown{
     display: flex;
     flex-direction: column;
