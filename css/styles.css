@@ -217,3 +217,104 @@ canvas{
   color: white;
 } 
 
+
+@media (max-width: 1270px){
+  #canvasDown{
+    display: flex;
+    flex-direction: column;
+  }
+  tr#cabecalho, tr#cabecalho-metalico, tr#cabecalho-preventiva{
+    width: 45px;
+    height: 13px;
+    font-weight: bold;
+  }
+
+  #title-gpon, #title-metalico, #title-preventiva{
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(62, 0, 0);
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+  }
+
+  #tdGpon, #tdMetalico, #tdPreventiva {
+    font-size: 8px;
+    
+  }
+  
+
+  td.tdCidade {
+    width: 60px;
+    background-color: #EEEEEE;
+    color: #000;
+    font-size:8px;
+    box-shadow: 4px 2px 5px 0px rgba(0,0,0,0.75);
+  }
+  
+  td.tdConcluida {
+    width: 60px;
+    background-color: #5B76FF;
+    color: #000;
+    font-size:8px;
+    box-shadow:2px 4px 6px 1px rgb(65 72 217 / 63%);
+    border: none;
+  }
+  
+  td.tdIniciada{
+    width: 60px;
+    background-color: #00E340;
+    color: #000;
+    font-size:8px;
+    box-shadow: 2px 4px 6px 1px rgba(0, 227, 64,0.5);
+    border: none;
+  }
+  
+  td.tdNin{
+    width: 60px;
+    background-color: #F2FF58;
+    font-size:8px;
+    color: #000;
+    box-shadow:2px 4px 6px 1px rgba(242, 255, 88, 0.85);
+    border: none;
+  }
+  
+  td.tdTotal{
+    width: 60px;
+    background-color: #EEEEEE;
+    font-size:8px;
+    color: #000;
+    box-shadow: 2px 4px 6px 1px rgba(0,0,0,0.2);
+    border: none;
+  }
+
+  tr td {
+    font-size: 6px;
+    text-align: center;
+    border: 0.7px solid white;
+  }
+
+  #btn {
+    width: 100px;
+    font-size: 10px;
+  }
+
+  .container{
+    margin-top: 3px;
+  }
+
+  
+#producao h1{
+  text-align: center;
+  font-size: 36px;
+  color: #F15412;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin: 2px 0 0 0;
+}
+
+}
+
+
