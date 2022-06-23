@@ -26,6 +26,8 @@ document.getElementById('button').addEventListener('click', () => {
 
                     //=======================FILTROS 
 
+
+
                     const conIniNin = item => {
                          if (item.Status === 'Concluída' || item.Status === 'Iniciada' || item.Status === 'Não Iniciada')
                               return item
@@ -50,6 +52,35 @@ document.getElementById('button').addEventListener('click', () => {
                               return item
                     }
 
+
+                    const prev = (item => {
+                         if ((item['Detalhe da Atividade'].charAt(0) === 'P' || item['Detalhe da Atividade'].charAt(0) === 'p') &&
+                              (item['Detalhe da Atividade'].charAt(1) === 'R' || item['Detalhe da Atividade'].charAt(1) === 'r') &&
+                              (item['Detalhe da Atividade'].charAt(2) === 'E' || item['Detalhe da Atividade'].charAt(2) === 'e') &&
+                              (item['Detalhe da Atividade'].charAt(3) === 'V' || item['Detalhe da Atividade'].charAt(3) === 'v')
+                         )
+                              return item
+                    })
+
+
+
+                    // ANTES DE RETIRAR PREV
+
+                    const data = rowObject
+
+                    // FUNÇAO PARA RETIRAR PREVENTIVA =================
+
+                    function removeItem(arr, prop, value) {
+                         prop.toUpperCase()
+                         return arr.filter(function (i) { return i[prop] !== value })
+                    }
+
+
+                    rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'PREV/BANDA LARGA')
+                    rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'PREV/PÓS CONTATO')
+                    rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'Prev/Pós Contato')
+
+
                     //===================== DADOS CIDADES                   
                     let dataArc = rowObject.filter(item => item.Cidade === 'ARACRUZ')
                     let dataCim = rowObject.filter(item => item.Cidade === 'CACHOEIRO DE ITAPEMIRIM')
@@ -73,7 +104,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const metalicoVva = dataVva.filter(metalico)
                     const metalicoVta = dataVta.filter(metalico)
 
-                    console.log(dataMetalico.length)
+
                     // ============= DADOS POR CIDADE GPON 
 
                     const dataGpon = rowObject.filter(gpon)
@@ -88,7 +119,15 @@ document.getElementById('button').addEventListener('click', () => {
                     const gponVva = dataVva.filter(gpon)
                     const gponVta = dataVta.filter(gpon)
 
-                    // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
+
+
+               // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
+                    // const titleProducao = document.createElement('h1')
+                    // titleProducao.className = 'title-producao'
+                    // titleProducao.innerHTML = 'PRODUÇÃO'
+                    // const tProducao = document.getElementById("producao")
+                    // tProducao.appendChild(titleProducao)
+
 
                     const titleGpon = document.createElement('span')
                     titleGpon.innerHTML = 'GPON'
@@ -96,14 +135,23 @@ document.getElementById('button').addEventListener('click', () => {
                     tGpon.append(titleGpon)
 
                     const tdCidade = document.createElement('td')
+                    tdCidade.className = 'tdCidade'
                     tdCidade.innerHTML = 'CIDADE'
+
                     const tdConcluida = document.createElement('td')
+                    tdConcluida.className = 'tdConcluida' 
                     tdConcluida.innerHTML = 'CONCLUIDA'
+
                     const tdIniciada = document.createElement('td')
+                    tdIniciada.className = 'tdIniciada'
                     tdIniciada.innerHTML = 'INICIADA'
+
                     const tdNaoiniciada = document.createElement('td')
+                    tdNaoiniciada.className = 'tdNin'
                     tdNaoiniciada.innerHTML = 'NÃO INICIADA'
+
                     const total = document.createElement('td')
+                    total.className = 'tdTotal'
                     total.innerHTML = 'TOTAL'
 
                     const tabela = document.getElementById('cabecalho')
@@ -146,7 +194,7 @@ document.getElementById('button').addEventListener('click', () => {
 
                     // CACHOEIRO
                     const tdCimGpon = document.createElement('td')
-                    tdCimGpon.innerHTML = 'CACHOEIRO DE ITAPEMIRIM'
+                    tdCimGpon.innerHTML = 'CACHOEIRO'
                     const colCimGpon = document.getElementById('cim')
                     colCimGpon.append(tdCimGpon)
 
@@ -203,28 +251,28 @@ document.getElementById('button').addEventListener('click', () => {
                     // COLATINA
                     const tdCnaGpon = document.createElement('td')
                     tdCnaGpon.innerHTML = 'COLATINA'
-                    const colCnaGpon = document.getElementById('cna-metalico')
+                    const colCnaGpon = document.getElementById('cna')
                     colCnaGpon.append(tdCnaGpon)
 
                     const tdConCnaGpon = document.createElement('td')
-                    tdConCnaGpon.innerHTML = metalicoCna.filter(statusConcluida).length
-                    const colConCnaGpon = document.getElementById('cna-metalico')
+                    tdConCnaGpon.innerHTML = gponCna.filter(statusConcluida).length
+                    const colConCnaGpon = document.getElementById('cna')
                     colConCnaGpon.append(tdConCnaGpon)
 
                     const tdIniCnaGpon = document.createElement('td')
-                    tdIniCnaGpon.innerHTML = metalicoCna.filter(statusIniciada).length
-                    const colIniCnaGpon = document.getElementById('cna-metalico')
+                    tdIniCnaGpon.innerHTML = gponCna.filter(statusIniciada).length
+                    const colIniCnaGpon = document.getElementById('cna')
                     colIniCnaGpon.append(tdIniCnaGpon)
 
                     const tdNinCnaGpon = document.createElement('td')
-                    tdNinCnaGpon.innerHTML = metalicoCna.filter(statusNaoIniciada).length
-                    const colNinCnaMetalico = document.getElementById('cna-metalico')
-                    colNinCnaMetalico.append(tdNinCnaGpon)
+                    tdNinCnaGpon.innerHTML = gponCna.filter(statusNaoIniciada).length
+                    const colNinCnaGpon = document.getElementById('cna')
+                    colNinCnaGpon.append(tdNinCnaGpon)
 
-                    const tdTotalCnaMetalico = document.createElement('td')
-                    tdTotalCnaMetalico.innerHTML = metalicoCna.filter(conIniNin).length
-                    const colTotalCnaMetalico = document.getElementById('cna-metalico')
-                    colTotalCnaMetalico.append(tdTotalCnaMetalico)
+                    const tdTotalCnaGpon = document.createElement('td')
+                    tdTotalCnaGpon.innerHTML = gponCna.filter(conIniNin).length
+                    const colTotalCnaGpon = document.getElementById('cna')
+                    colTotalCnaGpon.append(tdTotalCnaGpon)
 
 
                     // GUARAPARI
@@ -391,6 +439,7 @@ document.getElementById('button').addEventListener('click', () => {
 
                     // TOTAL
                     const tdGpon = document.createElement('td')
+                    tdGpon.className = 'tdGpon'
                     tdGpon.innerHTML = 'TOTAL'
                     const colGpon = document.getElementById('total')
                     colGpon.append(tdGpon)
@@ -425,14 +474,23 @@ document.getElementById('button').addEventListener('click', () => {
                     tMetalico.append(titleMetalico)
 
                     const tdCidadeMetalico = document.createElement('td')
+                    tdCidadeMetalico.className = 'tdCidade'
                     tdCidadeMetalico.innerHTML = 'CIDADE'
+
                     const tdConcluidaMetalico = document.createElement('td')
+                    tdConcluidaMetalico.className = 'tdConcluida'
                     tdConcluidaMetalico.innerHTML = 'CONCLUIDA'
+                    
                     const tdIniciadaMetalico = document.createElement('td')
+                    tdIniciadaMetalico.className = 'tdIniciada'
                     tdIniciadaMetalico.innerHTML = 'INICIADA'
                     const tdNaoiniciadaMetalico = document.createElement('td')
+                    
                     tdNaoiniciadaMetalico.innerHTML = 'NÃO INICIADA'
+                    tdNaoiniciadaMetalico.className = 'tdNin'
+
                     const totalMetalico = document.createElement('td')
+                    totalMetalico.className = 'tdTotal'
                     totalMetalico.innerHTML = 'TOTAL'
 
                     const tabelaMetalico = document.getElementById('cabecalho-metalico')
@@ -475,28 +533,28 @@ document.getElementById('button').addEventListener('click', () => {
 
                     const tdCnaMetalico = document.createElement('td')
                     tdCnaMetalico.innerHTML = 'COLATINA'
-                    const colCnaMetalico = document.getElementById('cna')
+                    const colCnaMetalico = document.getElementById('cna-metalico')
                     colCnaMetalico.append(tdCnaMetalico)
 
                     const tdConCnaMetalico = document.createElement('td')
-                    tdConCnaMetalico.innerHTML = gponCna.filter(statusConcluida).length
-                    const colConCnaMetalico = document.getElementById('cna')
+                    tdConCnaMetalico.innerHTML = metalicoCna.filter(statusConcluida).length
+                    const colConCnaMetalico = document.getElementById('cna-metalico')
                     colConCnaMetalico.append(tdConCnaMetalico)
 
                     const tdIniCnaMetalico = document.createElement('td')
-                    tdIniCnaMetalico.innerHTML = gponCna.filter(statusIniciada).length
-                    const colIniCnaMetalico = document.getElementById('cna')
+                    tdIniCnaMetalico.innerHTML = metalicoCna.filter(statusIniciada).length
+                    const colIniCnaMetalico = document.getElementById('cna-metalico')
                     colIniCnaMetalico.append(tdIniCnaMetalico)
 
                     const tdNinCnaMetalico = document.createElement('td')
-                    tdNinCnaMetalico.innerHTML = gponCna.filter(statusNaoIniciada).length
-                    const colNinCnaGpon = document.getElementById('cna')
-                    colNinCnaGpon.append(tdNinCnaMetalico)
+                    tdNinCnaMetalico.innerHTML = metalicoCna.filter(statusNaoIniciada).length
+                    const colNinCnaMetalico = document.getElementById('cna-metalico')
+                    colNinCnaMetalico.append(tdNinCnaMetalico)
 
-                    const tdTotalCnaGpon = document.createElement('td')
-                    tdTotalCnaGpon.innerHTML = gponCna.filter(conIniNin).length
-                    const colTotalCnaGpon = document.getElementById('cna')
-                    colTotalCnaGpon.append(tdTotalCnaGpon)
+                    const tdTotalCnaMetalico = document.createElement('td')
+                    tdTotalCnaMetalico.innerHTML = metalicoCna.filter(conIniNin).length
+                    const colTotalCnaMetalico = document.getElementById('cna-metalico')
+                    colTotalCnaMetalico.append(tdTotalCnaMetalico)
 
 
                     // LINHARES
@@ -637,14 +695,381 @@ document.getElementById('button').addEventListener('click', () => {
                     const colSumMetalico = document.getElementById('total-metalico')
                     colSumMetalico.append(tdSumMetalico)
 
+                    
+
+
+
+
+                     // ====CREATE CABEÇALHO TABELA PRODUÇAO PREVENTIVA ====
+
+
+                    const titlePrev = document.createElement('span')
+                    titlePrev.innerHTML = 'PREVENTIVA'
+                    const tPrev = document.getElementById("title-preventiva")
+                    tPrev.append(titlePrev)
+
+                    const tdCidadePrev = document.createElement('td')
+                    tdCidadePrev.className = 'tdCidade'
+                    tdCidadePrev.innerHTML = 'CIDADE'
+
+                    const tdConcluidaPrev = document.createElement('td')
+                    tdConcluidaPrev.className = 'tdConcluida' 
+                    tdConcluidaPrev.innerHTML = 'CONCLUIDA'
+
+                    const tdIniciadaPrev = document.createElement('td')
+                    tdIniciadaPrev.className = 'tdIniciada'
+                    tdIniciadaPrev.innerHTML = 'INICIADA'
+
+                    const tdNaoiniciadaPrev = document.createElement('td')
+                    tdNaoiniciadaPrev.className = 'tdNin'
+                    tdNaoiniciadaPrev.innerHTML = 'NÃO INICIADA'
+
+                    const totalPrev = document.createElement('td')
+                    totalPrev.className = 'tdTotal'
+                    totalPrev.innerHTML = 'TOTAL'
+
+                    const tabelaPrev = document.getElementById('cabecalho-preventiva')
+                    tabelaPrev.append(tdCidadePrev)
+                    tabelaPrev.append(tdConcluidaPrev)
+                    tabelaPrev.append(tdIniciadaPrev)
+                    tabelaPrev.append(tdNaoiniciadaPrev)
+                    tabelaPrev.append(totalPrev)
+
+
+                       // ============= DADOS PREVENTIVA
+               
+                    const prevArc = data.filter(item => item.Cidade === 'ARACRUZ').filter(prev)
+                    const prevCim = data.filter(item => item.Cidade === 'CACHOEIRO DE ITAPEMIRIM').filter(prev)
+                    const prevCca = data.filter(item => item.Cidade === 'CARIACICA').filter(prev)
+                    const prevCna = data.filter(item => item.Cidade === 'COLATINA').filter(prev)
+                    const prevGri = data.filter(item => item.Cidade === 'GUARAPARI').filter(prev)
+                    const prevLns = data.filter(item => item.Cidade === 'LINHARES').filter(prev)
+                    const prevSmt = data.filter(item => item.Cidade === 'SAO MATEUS').filter(prev)
+                    const prevSea = data.filter(item => item.Cidade === 'SERRA').filter(prev)
+                    const prevVva = data.filter(item => item.Cidade === 'VILA VELHA').filter(prev)
+                    const prevVta = data.filter(item => item.Cidade === 'VITORIA').filter(prev)
+     
+                    // ======== PRODUÇAO PREV ====
+
+
+                    // ARACRUZ
+                    const tdArcPrev = document.createElement('td')
+                    tdArcPrev.innerHTML = 'ARACRUZ'
+                    const colArcGponPrev = document.getElementById('arc-preventiva')
+                    colArcGponPrev.append(tdArcPrev)
+
+
+                    const tdConArcPrev = document.createElement('td')
+                    tdConArcPrev.innerHTML = prevArc.filter(statusConcluida).length
+                    const colConArcPrev = document.getElementById('arc-preventiva')
+                    colConArcPrev.append(tdConArcPrev)
+
+                    const tdIniArcPrev = document.createElement('td')
+                    tdIniArcPrev.innerHTML = prevArc.filter(statusIniciada).length
+                    const conIniArcPrev = document.getElementById('arc-preventiva')
+                    conIniArcPrev.append(tdIniArcPrev)
+
+                    const tdNinArcPrev = document.createElement('td')
+                    tdNinArcPrev.innerHTML = prevArc.filter(statusNaoIniciada).length
+                    const colNinArcPrev = document.getElementById('arc-preventiva')
+                    colNinArcPrev.append(tdNinArcPrev)
+
+                    const tdTotalArcPrev = document.createElement('td')
+                    tdTotalArcPrev.innerHTML = prevArc.filter(conIniNin).length
+                    const colTotalArcPrev = document.getElementById('arc-preventiva')
+                    colTotalArcPrev.append(tdTotalArcPrev)
+
+                    
+
+                    // CACHOEIRO
+                    
+                    const tdCimPrev = document.createElement('td')
+                    tdCimPrev.innerHTML = 'CACHOEIRO'
+                    const colCimPrev = document.getElementById('cim-preventiva')
+                    colCimPrev.append(tdCimPrev)
+
+
+                    const tdConCimPrev = document.createElement('td')
+                    tdConCimPrev.innerHTML = prevCim.filter(statusConcluida).length
+                    const colConCimPrev = document.getElementById('cim-preventiva')
+                    colConCimPrev.append(tdConCimPrev)
+
+                    const tdIniCimPrev = document.createElement('td')
+                    tdIniCimPrev.innerHTML = prevCim.filter(statusIniciada).length
+                    const colIniCimPrev = document.getElementById('cim-preventiva')
+                    colIniCimPrev.append(tdIniCimPrev)
+
+                    const tdNinCimPrev = document.createElement('td')
+                    tdNinCimPrev.innerHTML = prevCim.filter(statusNaoIniciada).length
+                    const colNinCimPrev = document.getElementById('cim-preventiva')
+                    colNinCimPrev.append(tdNinCimPrev)
+
+                    const tdTotalCimPrev = document.createElement('td')
+                    tdTotalCimPrev.innerHTML = prevCim.filter(conIniNin).length
+                    const colTotalCimPrev = document.getElementById('cim-preventiva')
+                    colTotalCimPrev.append(tdTotalCimPrev)
+
+
+                    // CARIACICA
+                    const tdCcaPrev = document.createElement('td')
+                    tdCcaPrev.innerHTML = 'CARIACICA'
+                    const colCcaPrev = document.getElementById('cca-preventiva')
+                    colCcaPrev.append(tdCcaPrev)
+
+
+                    const tdConCcaPrev = document.createElement('td')
+                    tdConCcaPrev.innerHTML = prevCca.filter(statusConcluida).length
+                    const colConCcaPrev = document.getElementById('cca-preventiva')
+                    colConCcaPrev.append(tdConCcaPrev)
+
+                    const tdIniCcaPrev = document.createElement('td')
+                    tdIniCcaPrev.innerHTML = prevCca.filter(statusIniciada).length
+                    const colIniCcaPrev = document.getElementById('cca-preventiva')
+                    colIniCcaPrev.append(tdIniCcaPrev)
+
+                    const tdNinCcaPrev = document.createElement('td')
+                    tdNinCcaPrev.innerHTML = prevCca.filter(statusNaoIniciada).length
+                    const colNinCcaPrev = document.getElementById('cca-preventiva')
+                    colNinCcaPrev.append(tdNinCcaPrev)
+
+                    const tdTotalCcaPrev = document.createElement('td')
+                    tdTotalCcaPrev.innerHTML = prevCca.filter(conIniNin).length
+                    const colTotalCcaPrev = document.getElementById('cca-preventiva')
+                    colTotalCcaPrev.append(tdTotalCcaPrev)
+
+
+                    // COLATINA
+                    const tdCnaPrev = document.createElement('td')
+                    tdCnaPrev.innerHTML = 'COLATINA'
+                    const colCnaPrev = document.getElementById('cna-preventiva')
+                    colCnaPrev.append(tdCnaPrev)
+
+                    const tdConCnaPrev = document.createElement('td')
+                    tdConCnaPrev.innerHTML = prevCna.filter(statusConcluida).length
+                    const colConCnaPrev = document.getElementById('cna-preventiva')
+                    colConCnaPrev.append(tdConCnaPrev)
+
+                    const tdIniCnaPrev = document.createElement('td')
+                    tdIniCnaPrev.innerHTML = prevCna.filter(statusIniciada).length
+                    const colIniCnaPrev = document.getElementById('cna-preventiva')
+                    colIniCnaPrev.append(tdIniCnaPrev)
+
+                    const tdNinCnaPrev = document.createElement('td')
+                    tdNinCnaPrev.innerHTML = prevCna.filter(statusNaoIniciada).length
+                    const colNinCnaPrev = document.getElementById('cna-preventiva')
+                    colNinCnaPrev.append(tdNinCnaPrev)
+
+                    const tdTotalCnaPrev = document.createElement('td')
+                    tdTotalCnaPrev.innerHTML = prevCna.filter(conIniNin).length
+                    const colTotalCnaPrev = document.getElementById('cna-preventiva')
+                    colTotalCnaPrev.append(tdTotalCnaPrev)
+
+
+                    // GUARAPARI
+                    const tdGriPrev = document.createElement('td')
+                    tdGriPrev.innerHTML = 'GUARAPARI'
+                    const colGriPrev = document.getElementById('gri-preventiva')
+                    colGriPrev.append(tdGriPrev)
+
+                    const tdConGriPrev = document.createElement('td')
+                    tdConGriPrev.innerHTML = prevGri.filter(statusConcluida).length
+                    const colConGriPrev = document.getElementById('gri-preventiva')
+                    colConGriPrev.append(tdConGriPrev)
+
+                    const tdIniGriPrev = document.createElement('td')
+                    tdIniGriPrev.innerHTML = prevGri.filter(statusIniciada).length
+                    const colIniGriPrev = document.getElementById('gri-preventiva')
+                    colIniGriPrev.append(tdIniGriPrev)
+
+                    const tdNinGriPrev = document.createElement('td')
+                    tdNinGriPrev.innerHTML = prevGri.filter(statusNaoIniciada).length
+                    const colNinGriPrev = document.getElementById('gri-preventiva')
+                    colNinGriPrev.append(tdNinGriPrev)
+
+                    const tdTotalGriPrev = document.createElement('td')
+                    tdTotalGriPrev.innerHTML = prevGri.filter(conIniNin).length
+                    const colTotalGriPrev = document.getElementById('gri-preventiva')
+                    colTotalGriPrev.append(tdTotalGriPrev)
+
+
+
+                    // LINHARES
+                    const tdLnsPrev = document.createElement('td')
+                    tdLnsPrev.innerHTML = 'LINHARES'
+                    const colLnsPrev = document.getElementById('lns-preventiva')
+                    colLnsPrev.append(tdLnsPrev)
+
+                    const tdConLnsPrev = document.createElement('td')
+                    tdConLnsPrev.innerHTML = prevLns.filter(statusConcluida).length
+                    const colConLnsPrev = document.getElementById('lns-preventiva')
+                    colConLnsPrev.append(tdConLnsPrev)
+
+                    const tdIniLnsPrev = document.createElement('td')
+                    tdIniLnsPrev.innerHTML = prevLns.filter(statusIniciada).length
+                    const colIniLnsPrev = document.getElementById('lns-preventiva')
+                    colIniLnsPrev.append(tdIniLnsPrev)
+
+                    const tdNinLnsPrev = document.createElement('td')
+                    tdNinLnsPrev.innerHTML = prevLns.filter(statusNaoIniciada).length
+                    const colNinLnsPrev = document.getElementById('lns-preventiva')
+                    colNinLnsPrev.append(tdNinLnsPrev)
+
+                    const tdTotalLnsPrev = document.createElement('td')
+                    tdTotalLnsPrev.innerHTML = prevLns.filter(conIniNin).length
+                    const colTotalLnsPrev = document.getElementById('lns-preventiva')
+                    colTotalLnsPrev.append(tdTotalLnsPrev)
+
+
+                    // SÃO MATEUS
+                    const tdSmtPrev = document.createElement('td')
+                    tdSmtPrev.innerHTML = 'SÃO MATEUS'
+                    const colSmtPrev = document.getElementById('smt-preventiva')
+                    colSmtPrev.append(tdSmtPrev)
+
+                    const tdConSmtPrev = document.createElement('td')
+                    tdConSmtPrev.innerHTML = prevSmt.filter(statusConcluida).length
+                    const colConSmtPrev = document.getElementById('smt-preventiva')
+                    colConSmtPrev.append(tdConSmtPrev)
+
+                    const tdIniSmtPrev = document.createElement('td')
+                    tdIniSmtPrev.innerHTML = prevSmt.filter(statusIniciada).length
+                    const colIniSmtPrev = document.getElementById('smt-preventiva')
+                    colIniSmtPrev.append(tdIniSmtPrev)
+
+                    const tdNinSmtPrev = document.createElement('td')
+                    tdNinSmtPrev.innerHTML = prevSmt.filter(statusNaoIniciada).length
+                    const colNinSmtPrev = document.getElementById('smt-preventiva')
+                    colNinSmtPrev.append(tdNinSmtPrev)
+
+                    const tdTotalSmtPrev = document.createElement('td')
+                    tdTotalSmtPrev.innerHTML = prevSmt.filter(conIniNin).length
+                    const colTotalSmtPrev = document.getElementById('smt-preventiva')
+                    colTotalSmtPrev.append(tdTotalSmtPrev)
+
+                    // SERRA
+                    const tdSeaPrev = document.createElement('td')
+                    tdSeaPrev.innerHTML = 'SERRA'
+                    const colSeaPrev = document.getElementById('sea-preventiva')
+                    colSeaPrev.append(tdSeaPrev)
+
+
+                    const tdConSeaPrev = document.createElement('td')
+                    tdConSeaPrev.innerHTML = prevSea.filter(statusConcluida).length
+                    const colConSeaPrev = document.getElementById('sea-preventiva')
+                    colConSeaPrev.append(tdConSeaPrev)
+
+                    const tdIniSeaPrev = document.createElement('td')
+                    tdIniSeaPrev.innerHTML = prevSea.filter(statusIniciada).length
+                    const colIniSeaPrev = document.getElementById('sea-preventiva')
+                    colIniSeaPrev.append(tdIniSeaPrev)
+
+                    const tdNinSeaPrev = document.createElement('td')
+                    tdNinSeaPrev.innerHTML = prevSea.filter(statusNaoIniciada).length
+                    const colNinSeaPrev = document.getElementById('sea-preventiva')
+                    colNinSeaPrev.append(tdNinSeaPrev)
+
+                    const tdTotalSeaPrev = document.createElement('td')
+                    tdTotalSeaPrev.innerHTML = prevSea.filter(conIniNin).length
+                    const colTotalSeaPrev = document.getElementById('sea-preventiva')
+                    colTotalSeaPrev.append(tdTotalSeaPrev)
+
+
+                    // VILA VELHA
+                    const tdVvaPrev = document.createElement('td')
+                    tdVvaPrev.innerHTML = 'VILA VELHA'
+                    const colVvaPrev = document.getElementById('vva-preventiva')
+                    colVvaPrev.append(tdVvaPrev)
+
+                    const tdConVvaPrev = document.createElement('td')
+                    tdConVvaPrev.innerHTML = prevVva.filter(statusConcluida).length
+                    const colConVvaPrev = document.getElementById('vva-preventiva')
+                    colConVvaPrev.append(tdConVvaPrev)
+
+                    const tdIniVvaPrev = document.createElement('td')
+                    tdIniVvaPrev.innerHTML = prevVva.filter(statusIniciada).length
+                    const colIniVvaPrev = document.getElementById('vva-preventiva')
+                    colIniVvaPrev.append(tdIniVvaPrev)
+
+                    const tdNinVvaPrev = document.createElement('td')
+                    tdNinVvaPrev.innerHTML = prevVva.filter(statusNaoIniciada).length
+                    const colNinVvaPrev = document.getElementById('vva-preventiva')
+                    colNinVvaPrev.append(tdNinVvaPrev)
+
+                    const tdTotalVvaPrev = document.createElement('td')
+                    tdTotalVvaPrev.innerHTML = prevVva.filter(conIniNin).length
+                    const colTotalVvaPrev = document.getElementById('vva-preventiva')
+                    colTotalVvaPrev.append(tdTotalVvaPrev)
+
+
+                    // VITORIA
+                    const tdVtaPrev = document.createElement('td')
+                    tdVtaPrev.innerHTML = 'VITÓRIA'
+                    const colVtaPrev = document.getElementById('vta-preventiva')
+                    colVtaPrev.append(tdVtaPrev)
+
+                    const tdConVtaPrev = document.createElement('td')
+                    tdConVtaPrev.innerHTML = prevVta.filter(statusConcluida).length
+                    const colConVtaPrev = document.getElementById('vta-preventiva')
+                    colConVtaPrev.append(tdConVtaPrev)
+
+                    const tdIniVtaPrev = document.createElement('td')
+                    tdIniVtaPrev.innerHTML = prevVta.filter(statusIniciada).length
+                    const colIniVtaPrev = document.getElementById('vta-preventiva')
+                    colIniVtaPrev.append(tdIniVtaPrev)
+
+                    const tdNinVtaPrev = document.createElement('td')
+                    tdNinVtaPrev.innerHTML = prevVta.filter(statusNaoIniciada).length
+                    const colNinVtaPrev = document.getElementById('vta-preventiva')
+                    colNinVtaPrev.append(tdNinVtaPrev)
+
+                    const tdTotalVtaPrev = document.createElement('td')
+                    tdTotalVtaPrev.innerHTML = prevVta.filter(conIniNin).length
+                    const colTotalVtaPrev = document.getElementById('vta-preventiva')
+                    colTotalVtaPrev.append(tdTotalVtaPrev)
+
+
+                    // TOTAL
+                    const dataPrev = data.filter(prev)
+               
+
+                    const tdPrev = document.createElement('td')
+                    tdPrev.className = 'tdGpon'
+                    tdPrev.innerHTML = 'TOTAL'
+                    const colPrev = document.getElementById('total-preventiva')
+                    colPrev.append(tdPrev)
+
+                    const tdConPrev = document.createElement('td')
+                    tdConPrev.innerHTML = dataPrev.filter(statusConcluida).length
+                    const colConPrev = document.getElementById('total-preventiva')
+                    colConPrev.append(tdConPrev)
+
+                    const tdIniPrev = document.createElement('td')
+                    tdIniPrev.innerHTML = dataPrev.filter(statusIniciada).length
+                    const colIniPrev = document.getElementById('total-preventiva')
+                    colIniPrev.append(tdIniPrev)
+
+                    const tdNinPrev = document.createElement('td')
+                    tdNinPrev.innerHTML = dataPrev.filter(statusNaoIniciada).length
+                    const colNinPrev = document.getElementById('total-preventiva')
+                    colNinPrev.append(tdNinPrev)
+
+                    const tdSumPrev = document.createElement('td')
+                    tdSumPrev.innerHTML = dataPrev.filter(conIniNin).length
+                    const colSumPrev = document.getElementById('total-preventiva')
+                    colSumPrev.append(tdSumPrev)
+                    
+
+
+                    // ============= btn Download
+
                     const btnProducao = document.createElement('button')
                     btnProducao.id = 'btnDonwload'
                     btnProducao.innerHTML = 'DOWNLOAD'
-                    const btnProducao2 = document.getElementById('canvasDown')
+                    const btnProducao2 = document.getElementById('div-download')
                     btnProducao2.append(btnProducao)
                
           
-                    let btnGenerator = document.querySelector('#canvasDown')
+                    let btnGenerator = document.querySelector('#btnDonwload')
                     let btnDownload = document.querySelector('.download')
 
                     btnGenerator.addEventListener('click', () => {
@@ -656,7 +1081,11 @@ document.getElementById('button').addEventListener('click', () => {
                          });
                     })
 
+
+
                });
+
+
 
           }
      }
