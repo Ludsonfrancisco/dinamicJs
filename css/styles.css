@@ -75,6 +75,11 @@ tr#cabecalho, tr#cabecalho-metalico, tr#cabecalho-preventiva{
   font-weight: bold;
 }
 
+tr#total, tr#total-metalico, tr#total-preventiva{
+  font-weight: bold;
+  background-color: rgba(130, 124, 124, 0.3);
+}
+
 
 td.tdCidade {
   width: 90px;
@@ -125,15 +130,15 @@ td.tdTotal{
   padding: 8px;
 }
 
-#tabela-gpon tr:not(#title-gpon){
+#tabela-gpon tr:not(#title-gpon, tr#total){
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-#tabela-metalico tr:not(#title-metalico){
+#tabela-metalico tr:not(#title-metalico,  tr#total-metalico){
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-#tabela-preventiva tr:not(#title-preventiva){
+#tabela-preventiva tr:not(#title-preventiva, tr#total-preventiva){
   background-color: rgba(217, 217, 217, 0.6);
 }
 
@@ -156,7 +161,8 @@ canvas{
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   background-color: rgb(62, 0, 0);
-  border-radius: 5px;
+  border-radius: 3px;
+  padding: 4px 0;
   text-align: center;
   color: #fff;
 }
@@ -235,7 +241,8 @@ canvas{
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(62, 0, 0);
-    border-radius: 5px;
+    border-radius: 2px;
+    padding: 4px 0;
     text-align: center;
     color: #fff;
   }
