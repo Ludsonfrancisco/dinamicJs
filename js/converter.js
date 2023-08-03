@@ -48,8 +48,14 @@ document.getElementById('button').addEventListener('click', () => {
                               item['Habilidades de Trabalho'] === 'Reparo Linha FB(1/100)' ||
                               item['Habilidades de Trabalho'] === 'Reparo TV FB(1/100)' ||
                               item['Habilidades de Trabalho'] === 'Reparo TV FB Alto Valor(1/100)' ||
-                              item['Habilidades de Trabalho'] === 'Reparo FTTA(1/100)'     
-                              )
+                              item['Habilidades de Trabalho'] === 'Reparo FTTA(1/100)' ||     
+                              item['Habilidades de Trabalho'] === '' && 
+                                                       ( item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
+                                                       item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
+                                                       item["Tipo de Atividade"] === 'Defeito Banda Larga' 
+                                                       )   
+                              ) 
+                              
 
                               return item
                     }
