@@ -175,7 +175,7 @@ document.getElementById('button').addEventListener('click', () => {
                     tabela.append(tdNaoiniciada)
                     tabela.append(total)
 
-                    // ======== CREATE CIDADE GPON ====
+                    // ======== CREATE CIDADE GPON ==
 
 
                     // ARACRUZ
