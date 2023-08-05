@@ -100,6 +100,8 @@ document.getElementById('button').addEventListener('click', () => {
                     let dataSea = rowObject.filter(item => item.Cidade === 'SERRA')
                     let dataVva = rowObject.filter(item => item.Cidade === 'VILA VELHA')
                     let dataVta = rowObject.filter(item => item.Cidade === 'VITORIA')
+                    let dataVia = rowObject.filter(item => item.Cidade === 'VIANA')
+
 
 
 
@@ -126,7 +128,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const gponSea = dataSea.filter(gpon)
                     const gponVva = dataVva.filter(gpon)
                     const gponVta = dataVta.filter(gpon)
-
+                    const gponVia = dataVia.filter(gpon)
 
 
                // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
@@ -445,6 +447,37 @@ document.getElementById('button').addEventListener('click', () => {
                     colTotalVta.append(tdTotalVta)
 
 
+                    // VIANA
+                    const tdViaGpon = document.createElement('td')
+                    tdViaGpon.innerHTML = 'VIANA'
+                    const colViaGpon = document.getElementById('via')
+                    colViaGpon.append(tdViaGpon)
+
+                    const tdConViaGpon = document.createElement('td')
+                    tdConViaGpon.innerHTML = gponVia.filter(statusConcluida).length
+                    const colConViaGpon = document.getElementById('via')
+                    colConViaGpon.append(tdConViaGpon)
+
+                    const tdIniViaGpon = document.createElement('td')
+                    tdIniViaGpon.innerHTML = gponVia.filter(statusIniciada).length
+                    const colIniViaGpon = document.getElementById('via')
+                    colIniViaGpon.append(tdIniViaGpon)
+
+                    const tdNinViaGpon = document.createElement('td')
+                    tdNinViaGpon.innerHTML = gponVia.filter(statusNaoIniciada).length
+                    const colNinViaGpon = document.getElementById('via')
+                    colNinViaGpon.append(tdNinViaGpon)
+
+                    const tdTotalVia = document.createElement('td')
+                    tdTotalVia.innerHTML = gponVia.filter(conIniNin).length
+                    const colTotalVia = document.getElementById('via')
+                    colTotalVia.append(tdTotalVia)
+
+
+
+                                   
+
+
                     // TOTAL
                     const tdGpon = document.createElement('td')
                     tdGpon.className = 'tdGpon'
@@ -754,6 +787,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const prevLns = data.filter(item => item.Cidade === 'LINHARES').filter(prev)
                     const prevSmt = data.filter(item => item.Cidade === 'SAO MATEUS').filter(prev)
                     const prevSea = data.filter(item => item.Cidade === 'SERRA').filter(prev)
+                    const prevVia = data.filter(item => item.Cidade === 'VIANA').filter(prev)
                     const prevVva = data.filter(item => item.Cidade === 'VILA VELHA').filter(prev)
                     const prevVta = data.filter(item => item.Cidade === 'VITORIA').filter(prev)
      
@@ -980,6 +1014,35 @@ document.getElementById('button').addEventListener('click', () => {
                     tdTotalSeaPrev.innerHTML = prevSea.filter(conIniNin).length
                     const colTotalSeaPrev = document.getElementById('sea-preventiva')
                     colTotalSeaPrev.append(tdTotalSeaPrev)
+
+
+
+                    // VIANA
+                    const tdViaPrev = document.createElement('td')
+                    tdViaPrev.innerHTML = 'VIANA'
+                    const colViaPrev = document.getElementById('via-preventiva')
+                    colViaPrev.append(tdViaPrev)
+
+
+                    const tdConViaPrev = document.createElement('td')
+                    tdConViaPrev.innerHTML = prevVia.filter(statusConcluida).length
+                    const colConViaPrev = document.getElementById('via-preventiva')
+                    colConViaPrev.append(tdConViaPrev)
+
+                    const tdIniViaPrev = document.createElement('td')
+                    tdIniViaPrev.innerHTML = prevVia.filter(statusIniciada).length
+                    const colIniViaPrev = document.getElementById('via-preventiva')
+                    colIniViaPrev.append(tdIniViaPrev)
+
+                    const tdNinViaPrev = document.createElement('td')
+                    tdNinViaPrev.innerHTML = prevVia.filter(statusNaoIniciada).length
+                    const colNinViaPrev = document.getElementById('via-preventiva')
+                    colNinViaPrev.append(tdNinViaPrev)
+
+                    const tdTotalViaPrev = document.createElement('td')
+                    tdTotalViaPrev.innerHTML = prevVia.filter(conIniNin).length
+                    const colTotalViaPrev = document.getElementById('via-preventiva')
+                    colTotalViaPrev.append(tdTotalViaPrev)
 
 
                     // VILA VELHA
