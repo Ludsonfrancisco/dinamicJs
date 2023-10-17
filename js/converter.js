@@ -50,14 +50,14 @@ document.getElementById('button').addEventListener('click', () => {
                               item['Habilidades de Trabalho'] === 'Reparo Linha FB(1/100)' ||
                               item['Habilidades de Trabalho'] === 'Reparo TV FB(1/100)' ||
                               item['Habilidades de Trabalho'] === 'Reparo TV FB Alto Valor(1/100)' ||
-                              item['Habilidades de Trabalho'] === 'Reparo FTTA(1/100)' ||     
-                              item['Habilidades de Trabalho'] === '' && 
-                                                       ( item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
-                                                       item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
-                                                       item["Tipo de Atividade"] === 'Defeito Banda Larga' 
-                                                       )   
-                              ) 
-                              
+                              item['Habilidades de Trabalho'] === 'Reparo FTTA(1/100)' ||
+                              item['Habilidades de Trabalho'] === '' &&
+                              (item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
+                                   item["Tipo de Atividade"] === 'Defeito Banda Larga' ||
+                                   item["Tipo de Atividade"] === 'Defeito Banda Larga'
+                              )
+                         )
+
 
                               return item
                     }
@@ -135,7 +135,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const gponVia = dataVia.filter(gpon)
 
 
-               // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
+                    // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
                     // const titleProducao = document.createElement('h1')
                     // titleProducao.className = 'title-producao'
                     // titleProducao.innerHTML = 'PRODUÇÃO'
@@ -153,7 +153,7 @@ document.getElementById('button').addEventListener('click', () => {
                     tdCidade.innerHTML = 'CIDADE'
 
                     const tdConcluida = document.createElement('td')
-                    tdConcluida.className = 'tdConcluida' 
+                    tdConcluida.className = 'tdConcluida'
                     tdConcluida.innerHTML = 'CONCLUIDA'
 
                     const tdIniciada = document.createElement('td')
@@ -509,7 +509,7 @@ document.getElementById('button').addEventListener('click', () => {
 
 
 
-                                   
+
 
 
                     // TOTAL
@@ -530,7 +530,7 @@ document.getElementById('button').addEventListener('click', () => {
                     colIniGpon.append(tdIniGpon)
 
                     const tdNinGpon = document.createElement('td')
-                    tdNinGpon.innerHTML = dataGpon.filter(statusNaoIniciada).length 
+                    tdNinGpon.innerHTML = dataGpon.filter(statusNaoIniciada).length
                     const colNinGpon = document.getElementById('total')
                     colNinGpon.append(tdNinGpon)
 
@@ -540,242 +540,242 @@ document.getElementById('button').addEventListener('click', () => {
                     colSumGpon.append(tdSumGpon)
 
 
-                    // ============ CREATE CIDADADE METALICO                 
+                    //============ CREATE CIDADADE METALICO                 
 
 
-                    // const titleMetalico = document.createElement('span')
-                    // titleMetalico.innerHTML = 'METALICO'
-                    // const tMetalico = document.getElementById("title-metalico")
-                    // tMetalico.append(titleMetalico)
+                    const titleMetalico = document.createElement('span')
+                    titleMetalico.innerHTML = 'METALICO'
+                    const tMetalico = document.getElementById("title-metalico")
+                    tMetalico.append(titleMetalico)
 
-                    // const tdCidadeMetalico = document.createElement('td')
-                    // tdCidadeMetalico.className = 'tdCidade'
-                    // tdCidadeMetalico.innerHTML = 'CIDADE'
+                    const tdCidadeMetalico = document.createElement('td')
+                    tdCidadeMetalico.className = 'tdCidade'
+                    tdCidadeMetalico.innerHTML = 'CIDADE'
 
-                    // const tdConcluidaMetalico = document.createElement('td')
-                    // tdConcluidaMetalico.className = 'tdConcluida'
-                    // tdConcluidaMetalico.innerHTML = 'CONCLUIDA'
-                    
-                    // const tdIniciadaMetalico = document.createElement('td')
-                    // tdIniciadaMetalico.className = 'tdIniciada'
-                    // tdIniciadaMetalico.innerHTML = 'INICIADA'
-                    // const tdNaoiniciadaMetalico = document.createElement('td')
-                    
-                    // tdNaoiniciadaMetalico.innerHTML = 'NÃO INICIADA'
-                    // tdNaoiniciadaMetalico.className = 'tdNin'
+                    const tdConcluidaMetalico = document.createElement('td')
+                    tdConcluidaMetalico.className = 'tdConcluida'
+                    tdConcluidaMetalico.innerHTML = 'CONCLUIDA'
 
-                    // const totalMetalico = document.createElement('td')
-                    // totalMetalico.className = 'tdTotal'
-                    // totalMetalico.innerHTML = 'TOTAL'
+                    const tdIniciadaMetalico = document.createElement('td')
+                    tdIniciadaMetalico.className = 'tdIniciada'
+                    tdIniciadaMetalico.innerHTML = 'INICIADA'
+                    const tdNaoiniciadaMetalico = document.createElement('td')
 
-                    // const tabelaMetalico = document.getElementById('cabecalho-metalico')
-                    // tabelaMetalico.append(tdCidadeMetalico)
-                    // tabelaMetalico.append(tdConcluidaMetalico)
-                    // tabelaMetalico.append(tdIniciadaMetalico)
-                    // tabelaMetalico.append(tdNaoiniciadaMetalico)
-                    // tabelaMetalico.append(totalMetalico)
+                    tdNaoiniciadaMetalico.innerHTML = 'NÃO INICIADA'
+                    tdNaoiniciadaMetalico.className = 'tdNin'
 
-                    // // DADOS CIDADE METALICO 
+                    const totalMetalico = document.createElement('td')
+                    totalMetalico.className = 'tdTotal'
+                    totalMetalico.innerHTML = 'TOTAL'
 
-                    // // CARIACICA
-                    // const tdCcaMetalico = document.createElement('td')
-                    // tdCcaMetalico.innerHTML = 'CARIACICA'
-                    // const colCcaMetalico = document.getElementById('cca-metalico')
-                    // colCcaMetalico.append(tdCcaMetalico)
+                    const tabelaMetalico = document.getElementById('cabecalho-metalico')
+                    tabelaMetalico.append(tdCidadeMetalico)
+                    tabelaMetalico.append(tdConcluidaMetalico)
+                    tabelaMetalico.append(tdIniciadaMetalico)
+                    tabelaMetalico.append(tdNaoiniciadaMetalico)
+                    tabelaMetalico.append(totalMetalico)
 
-                    // const tdConCcaMetalico = document.createElement('td')
-                    // tdConCcaMetalico.innerHTML = metalicoCca.filter(statusConcluida).length
-                    // const colConCcaMetalico = document.getElementById('cca-metalico')
-                    // colConCcaMetalico.append(tdConCcaMetalico)
+                    // DADOS CIDADE METALICO 
 
-                    // const tdIniCcaMetalico = document.createElement('td')
-                    // tdIniCcaMetalico.innerHTML = metalicoCca.filter(statusIniciada).length
-                    // const colIniCcaMetalico = document.getElementById('cca-metalico')
-                    // colIniCcaMetalico.append(tdIniCcaMetalico)
+                    // CARIACICA
+                    const tdCcaMetalico = document.createElement('td')
+                    tdCcaMetalico.innerHTML = 'CARIACICA'
+                    const colCcaMetalico = document.getElementById('cca-metalico')
+                    colCcaMetalico.append(tdCcaMetalico)
 
-                    // const tdNinCcaMetalico = document.createElement('td')
-                    // tdNinCcaMetalico.innerHTML = metalicoCca.filter(statusNaoIniciada).length
-                    // const colNinCcaMetalico = document.getElementById('cca-metalico')
-                    // colNinCcaMetalico.append(tdNinCcaMetalico)
+                    const tdConCcaMetalico = document.createElement('td')
+                    tdConCcaMetalico.innerHTML = metalicoCca.filter(statusConcluida).length
+                    const colConCcaMetalico = document.getElementById('cca-metalico')
+                    colConCcaMetalico.append(tdConCcaMetalico)
 
-                    // const tdTotalCcaMetalico = document.createElement('td')
-                    // tdTotalCcaMetalico.innerHTML = metalicoCca.filter(conIniNin).length
-                    // const colTotalCcaMetalico = document.getElementById('cca-metalico')
-                    // colTotalCcaMetalico.append(tdTotalCcaMetalico)
+                    const tdIniCcaMetalico = document.createElement('td')
+                    tdIniCcaMetalico.innerHTML = metalicoCca.filter(statusIniciada).length
+                    const colIniCcaMetalico = document.getElementById('cca-metalico')
+                    colIniCcaMetalico.append(tdIniCcaMetalico)
 
+                    const tdNinCcaMetalico = document.createElement('td')
+                    tdNinCcaMetalico.innerHTML = metalicoCca.filter(statusNaoIniciada).length
+                    const colNinCcaMetalico = document.getElementById('cca-metalico')
+                    colNinCcaMetalico.append(tdNinCcaMetalico)
 
-                    // // COLATINA
-
-                    // const tdCnaMetalico = document.createElement('td')
-                    // tdCnaMetalico.innerHTML = 'COLATINA'
-                    // const colCnaMetalico = document.getElementById('cna-metalico')
-                    // colCnaMetalico.append(tdCnaMetalico)
-
-                    // const tdConCnaMetalico = document.createElement('td')
-                    // tdConCnaMetalico.innerHTML = metalicoCna.filter(statusConcluida).length
-                    // const colConCnaMetalico = document.getElementById('cna-metalico')
-                    // colConCnaMetalico.append(tdConCnaMetalico)
-
-                    // const tdIniCnaMetalico = document.createElement('td')
-                    // tdIniCnaMetalico.innerHTML = metalicoCna.filter(statusIniciada).length
-                    // const colIniCnaMetalico = document.getElementById('cna-metalico')
-                    // colIniCnaMetalico.append(tdIniCnaMetalico)
-
-                    // const tdNinCnaMetalico = document.createElement('td')
-                    // tdNinCnaMetalico.innerHTML = metalicoCna.filter(statusNaoIniciada).length
-                    // const colNinCnaMetalico = document.getElementById('cna-metalico')
-                    // colNinCnaMetalico.append(tdNinCnaMetalico)
-
-                    // const tdTotalCnaMetalico = document.createElement('td')
-                    // tdTotalCnaMetalico.innerHTML = metalicoCna.filter(conIniNin).length
-                    // const colTotalCnaMetalico = document.getElementById('cna-metalico')
-                    // colTotalCnaMetalico.append(tdTotalCnaMetalico)
+                    const tdTotalCcaMetalico = document.createElement('td')
+                    tdTotalCcaMetalico.innerHTML = metalicoCca.filter(conIniNin).length
+                    const colTotalCcaMetalico = document.getElementById('cca-metalico')
+                    colTotalCcaMetalico.append(tdTotalCcaMetalico)
 
 
-                    // // LINHARES
+                    // COLATINA
 
-                    // const tdLnsMetalico = document.createElement('td')
-                    // tdLnsMetalico.innerHTML = 'LINHARES'
-                    // const colLnsMetalico = document.getElementById('lns-metalico')
-                    // colLnsMetalico.append(tdLnsMetalico)
+                    const tdCnaMetalico = document.createElement('td')
+                    tdCnaMetalico.innerHTML = 'COLATINA'
+                    const colCnaMetalico = document.getElementById('cna-metalico')
+                    colCnaMetalico.append(tdCnaMetalico)
 
-                    // const tdConLnsMetalico = document.createElement('td')
-                    // tdConLnsMetalico.innerHTML = metalicoLns.filter(statusConcluida).length
-                    // const colConLnsMetalico = document.getElementById('lns-metalico')
-                    // colConLnsMetalico.append(tdConLnsMetalico)
+                    const tdConCnaMetalico = document.createElement('td')
+                    tdConCnaMetalico.innerHTML = metalicoCna.filter(statusConcluida).length
+                    const colConCnaMetalico = document.getElementById('cna-metalico')
+                    colConCnaMetalico.append(tdConCnaMetalico)
 
-                    // const tdIniLnsMetalico = document.createElement('td')
-                    // tdIniLnsMetalico.innerHTML = metalicoLns.filter(statusIniciada).length
-                    // const colIniLnsMetalico = document.getElementById('lns-metalico')
-                    // colIniLnsMetalico.append(tdIniLnsMetalico)
+                    const tdIniCnaMetalico = document.createElement('td')
+                    tdIniCnaMetalico.innerHTML = metalicoCna.filter(statusIniciada).length
+                    const colIniCnaMetalico = document.getElementById('cna-metalico')
+                    colIniCnaMetalico.append(tdIniCnaMetalico)
 
-                    // const tdNinLnsMetalico = document.createElement('td')
-                    // tdNinLnsMetalico.innerHTML = metalicoLns.filter(statusNaoIniciada).length
-                    // const colNinLnsMetalico = document.getElementById('lns-metalico')
-                    // colNinLnsMetalico.append(tdNinLnsMetalico)
+                    const tdNinCnaMetalico = document.createElement('td')
+                    tdNinCnaMetalico.innerHTML = metalicoCna.filter(statusNaoIniciada).length
+                    const colNinCnaMetalico = document.getElementById('cna-metalico')
+                    colNinCnaMetalico.append(tdNinCnaMetalico)
 
-                    // const tdTotalLnsMetalico = document.createElement('td')
-                    // tdTotalLnsMetalico.innerHTML = metalicoLns.filter(conIniNin).length
-                    // const colTotalLnsMetalico = document.getElementById('lns-metalico')
-                    // colTotalLnsMetalico.append(tdTotalLnsMetalico)
-
-
-                    // // SERRA
-
-                    // const tdSeaMetalico = document.createElement('td')
-                    // tdSeaMetalico.innerHTML = 'SERRA'
-                    // const colSeaMetalico = document.getElementById('sea-metalico')
-                    // colSeaMetalico.append(tdSeaMetalico)
-
-                    // const tdConSeaMetalico = document.createElement('td')
-                    // tdConSeaMetalico.innerHTML = metalicoSea.filter(statusConcluida).length
-                    // const colConSeaMetalico = document.getElementById('sea-metalico')
-                    // colConSeaMetalico.append(tdConSeaMetalico)
-
-                    // const tdIniSeaMetalico = document.createElement('td')
-                    // tdIniSeaMetalico.innerHTML = metalicoSea.filter(statusIniciada).length
-                    // const colIniSeaMetalico = document.getElementById('sea-metalico')
-                    // colIniSeaMetalico.append(tdIniSeaMetalico)
-
-                    // const tdNinSeaMetalico = document.createElement('td')
-                    // tdNinSeaMetalico.innerHTML = metalicoSea.filter(statusNaoIniciada).length
-                    // const colNinSeaMetalico = document.getElementById('sea-metalico')
-                    // colNinSeaMetalico.append(tdNinSeaMetalico)
-
-                    // const tdTotalSeaMetalico = document.createElement('td')
-                    // tdTotalSeaMetalico.innerHTML = metalicoSea.filter(conIniNin).length
-                    // const colTotalSeaMetalico = document.getElementById('sea-metalico')
-                    // colTotalSeaMetalico.append(tdTotalSeaMetalico)
+                    const tdTotalCnaMetalico = document.createElement('td')
+                    tdTotalCnaMetalico.innerHTML = metalicoCna.filter(conIniNin).length
+                    const colTotalCnaMetalico = document.getElementById('cna-metalico')
+                    colTotalCnaMetalico.append(tdTotalCnaMetalico)
 
 
-                    // // VILA VELHA
+                    // LINHARES
 
-                    // const tdVvaMetalico = document.createElement('td')
-                    // tdVvaMetalico.innerHTML = 'VILA VELHA'
-                    // const colVvaMetalico = document.getElementById('vva-metalico')
-                    // colVvaMetalico.append(tdVvaMetalico)
+                    const tdLnsMetalico = document.createElement('td')
+                    tdLnsMetalico.innerHTML = 'LINHARES'
+                    const colLnsMetalico = document.getElementById('lns-metalico')
+                    colLnsMetalico.append(tdLnsMetalico)
 
-                    // const tdConVvaMetalico = document.createElement('td')
-                    // tdConVvaMetalico.innerHTML = metalicoVva.filter(statusConcluida).length
-                    // const colConVvaMetalico = document.getElementById('vva-metalico')
-                    // colConVvaMetalico.append(tdConVvaMetalico)
+                    const tdConLnsMetalico = document.createElement('td')
+                    tdConLnsMetalico.innerHTML = metalicoLns.filter(statusConcluida).length
+                    const colConLnsMetalico = document.getElementById('lns-metalico')
+                    colConLnsMetalico.append(tdConLnsMetalico)
 
-                    // const tdIniVvaMetalico = document.createElement('td')
-                    // tdIniVvaMetalico.innerHTML = metalicoVva.filter(statusIniciada).length
-                    // const colIniVvaMetalico = document.getElementById('vva-metalico')
-                    // colIniVvaMetalico.append(tdIniVvaMetalico)
+                    const tdIniLnsMetalico = document.createElement('td')
+                    tdIniLnsMetalico.innerHTML = metalicoLns.filter(statusIniciada).length
+                    const colIniLnsMetalico = document.getElementById('lns-metalico')
+                    colIniLnsMetalico.append(tdIniLnsMetalico)
 
-                    // const tdNinVvaMetalico = document.createElement('td')
-                    // tdNinVvaMetalico.innerHTML = metalicoVva.filter(statusNaoIniciada).length
-                    // const colNinVvaMetalico = document.getElementById('vva-metalico')
-                    // colNinVvaMetalico.append(tdNinVvaMetalico)
+                    const tdNinLnsMetalico = document.createElement('td')
+                    tdNinLnsMetalico.innerHTML = metalicoLns.filter(statusNaoIniciada).length
+                    const colNinLnsMetalico = document.getElementById('lns-metalico')
+                    colNinLnsMetalico.append(tdNinLnsMetalico)
 
-                    // const tdTotalVvaMetalico = document.createElement('td')
-                    // tdTotalVvaMetalico.innerHTML = metalicoVva.filter(conIniNin).length
-                    // const colTotalVvaMetalico = document.getElementById('vva-metalico')
-                    // colTotalVvaMetalico.append(tdTotalVvaMetalico)
-
-                    // // VITÓRIA
-
-                    // const tdVtaMetalico = document.createElement('td')
-                    // tdVtaMetalico.innerHTML = 'VITÓRIA'
-                    // const colVtaMetalico = document.getElementById('vta-metalico')
-                    // colVtaMetalico.append(tdVtaMetalico)
-
-                    // const tdConVtaMetalico = document.createElement('td')
-                    // tdConVtaMetalico.innerHTML = metalicoVta.filter(statusConcluida).length
-                    // const colConVtaMetalico = document.getElementById('vta-metalico')
-                    // colConVtaMetalico.append(tdConVtaMetalico)
-
-                    // const tdIniVtaMetalico = document.createElement('td')
-                    // tdIniVtaMetalico.innerHTML = metalicoVta.filter(statusIniciada).length
-                    // const colIniVtaMetalico = document.getElementById('vta-metalico')
-                    // colIniVtaMetalico.append(tdIniVtaMetalico)
-
-                    // const tdNinVtaMetalico = document.createElement('td')
-                    // tdNinVtaMetalico.innerHTML = metalicoVta.filter(statusNaoIniciada).length
-                    // const colNinVtaMetalico = document.getElementById('vta-metalico')
-                    // colNinVtaMetalico.append(tdNinVtaMetalico)
-
-                    // const tdTotalVtaMetalico = document.createElement('td')
-                    // tdTotalVtaMetalico.innerHTML = metalicoVta.filter(conIniNin).length
-                    // const colTotalVtaMetalico = document.getElementById('vta-metalico')
-                    // colTotalVtaMetalico.append(tdTotalVtaMetalico)
+                    const tdTotalLnsMetalico = document.createElement('td')
+                    tdTotalLnsMetalico.innerHTML = metalicoLns.filter(conIniNin).length
+                    const colTotalLnsMetalico = document.getElementById('lns-metalico')
+                    colTotalLnsMetalico.append(tdTotalLnsMetalico)
 
 
-                    // // ========== TOTAL METALICO 
+                    // SERRA
 
-                    // const tdMetalico = document.createElement('td')
-                    // tdMetalico.innerHTML = 'TOTAL'
-                    // const colMetalico = document.getElementById('total-metalico')
-                    // colMetalico.append(tdMetalico)
+                    const tdSeaMetalico = document.createElement('td')
+                    tdSeaMetalico.innerHTML = 'SERRA'
+                    const colSeaMetalico = document.getElementById('sea-metalico')
+                    colSeaMetalico.append(tdSeaMetalico)
 
-                    // const tdConMetalico = document.createElement('td')
-                    // tdConMetalico.innerHTML = dataMetalico.filter(statusConcluida).length
-                    // const colConMetalico = document.getElementById('total-metalico')
-                    // colConMetalico.append(tdConMetalico)
+                    const tdConSeaMetalico = document.createElement('td')
+                    tdConSeaMetalico.innerHTML = metalicoSea.filter(statusConcluida).length
+                    const colConSeaMetalico = document.getElementById('sea-metalico')
+                    colConSeaMetalico.append(tdConSeaMetalico)
 
-                    // const tdIniMetalico = document.createElement('td')
-                    // tdIniMetalico.innerHTML = dataMetalico.filter(statusIniciada).length
-                    // const colIniMetalico = document.getElementById('total-metalico')
-                    // colIniMetalico.append(tdIniMetalico)
+                    const tdIniSeaMetalico = document.createElement('td')
+                    tdIniSeaMetalico.innerHTML = metalicoSea.filter(statusIniciada).length
+                    const colIniSeaMetalico = document.getElementById('sea-metalico')
+                    colIniSeaMetalico.append(tdIniSeaMetalico)
 
-                    // const tdNinMetalico = document.createElement('td')
-                    // tdNinMetalico.innerHTML = dataMetalico.filter(statusNaoIniciada).length
-                    // const colNinMetalico = document.getElementById('total-metalico')
-                    // colNinMetalico.append(tdNinMetalico)
+                    const tdNinSeaMetalico = document.createElement('td')
+                    tdNinSeaMetalico.innerHTML = metalicoSea.filter(statusNaoIniciada).length
+                    const colNinSeaMetalico = document.getElementById('sea-metalico')
+                    colNinSeaMetalico.append(tdNinSeaMetalico)
 
-                    // const tdSumMetalico = document.createElement('td')
-                    // tdSumMetalico.innerHTML = dataMetalico.filter(conIniNin).length
-                    // const colSumMetalico = document.getElementById('total-metalico')
-                    // colSumMetalico.append(tdSumMetalico)
+                    const tdTotalSeaMetalico = document.createElement('td')
+                    tdTotalSeaMetalico.innerHTML = metalicoSea.filter(conIniNin).length
+                    const colTotalSeaMetalico = document.getElementById('sea-metalico')
+                    colTotalSeaMetalico.append(tdTotalSeaMetalico)
 
-                    
 
+                    // VILA VELHA
+
+                    const tdVvaMetalico = document.createElement('td')
+                    tdVvaMetalico.innerHTML = 'VILA VELHA'
+                    const colVvaMetalico = document.getElementById('vva-metalico')
+                    colVvaMetalico.append(tdVvaMetalico)
+
+                    const tdConVvaMetalico = document.createElement('td')
+                    tdConVvaMetalico.innerHTML = metalicoVva.filter(statusConcluida).length
+                    const colConVvaMetalico = document.getElementById('vva-metalico')
+                    colConVvaMetalico.append(tdConVvaMetalico)
+
+                    const tdIniVvaMetalico = document.createElement('td')
+                    tdIniVvaMetalico.innerHTML = metalicoVva.filter(statusIniciada).length
+                    const colIniVvaMetalico = document.getElementById('vva-metalico')
+                    colIniVvaMetalico.append(tdIniVvaMetalico)
+
+                    const tdNinVvaMetalico = document.createElement('td')
+                    tdNinVvaMetalico.innerHTML = metalicoVva.filter(statusNaoIniciada).length
+                    const colNinVvaMetalico = document.getElementById('vva-metalico')
+                    colNinVvaMetalico.append(tdNinVvaMetalico)
+
+                    const tdTotalVvaMetalico = document.createElement('td')
+                    tdTotalVvaMetalico.innerHTML = metalicoVva.filter(conIniNin).length
+                    const colTotalVvaMetalico = document.getElementById('vva-metalico')
+                    colTotalVvaMetalico.append(tdTotalVvaMetalico)
+
+                    // VITÓRIA
+
+                    const tdVtaMetalico = document.createElement('td')
+                    tdVtaMetalico.innerHTML = 'VITÓRIA'
+                    const colVtaMetalico = document.getElementById('vta-metalico')
+                    colVtaMetalico.append(tdVtaMetalico)
+
+                    const tdConVtaMetalico = document.createElement('td')
+                    tdConVtaMetalico.innerHTML = metalicoVta.filter(statusConcluida).length
+                    const colConVtaMetalico = document.getElementById('vta-metalico')
+                    colConVtaMetalico.append(tdConVtaMetalico)
+
+                    const tdIniVtaMetalico = document.createElement('td')
+                    tdIniVtaMetalico.innerHTML = metalicoVta.filter(statusIniciada).length
+                    const colIniVtaMetalico = document.getElementById('vta-metalico')
+                    colIniVtaMetalico.append(tdIniVtaMetalico)
+
+                    const tdNinVtaMetalico = document.createElement('td')
+                    tdNinVtaMetalico.innerHTML = metalicoVta.filter(statusNaoIniciada).length
+                    const colNinVtaMetalico = document.getElementById('vta-metalico')
+                    colNinVtaMetalico.append(tdNinVtaMetalico)
+
+                    const tdTotalVtaMetalico = document.createElement('td')
+                    tdTotalVtaMetalico.innerHTML = metalicoVta.filter(conIniNin).length
+                    const colTotalVtaMetalico = document.getElementById('vta-metalico')
+                    colTotalVtaMetalico.append(tdTotalVtaMetalico)
+
+
+                    // ========== TOTAL METALICO 
+
+                    const tdMetalico = document.createElement('td')
+                    tdMetalico.innerHTML = 'TOTAL'
+                    const colMetalico = document.getElementById('total-metalico')
+                    colMetalico.append(tdMetalico)
+
+                    const tdConMetalico = document.createElement('td')
+                    tdConMetalico.innerHTML = dataMetalico.filter(statusConcluida).length
+                    const colConMetalico = document.getElementById('total-metalico')
+                    colConMetalico.append(tdConMetalico)
+
+                    const tdIniMetalico = document.createElement('td')
+                    tdIniMetalico.innerHTML = dataMetalico.filter(statusIniciada).length
+                    const colIniMetalico = document.getElementById('total-metalico')
+                    colIniMetalico.append(tdIniMetalico)
+
+                    const tdNinMetalico = document.createElement('td')
+                    tdNinMetalico.innerHTML = dataMetalico.filter(statusNaoIniciada).length
+                    const colNinMetalico = document.getElementById('total-metalico')
+                    colNinMetalico.append(tdNinMetalico)
+
+                    const tdSumMetalico = document.createElement('td')
+                    tdSumMetalico.innerHTML = dataMetalico.filter(conIniNin).length
+                    const colSumMetalico = document.getElementById('total-metalico')
+                    colSumMetalico.append(tdSumMetalico)
 
 
 
-                     // ====CREATE CABEÇALHO TABELA PRODUÇAO PREVENTIVA ====
+
+
+
+                    // ====CREATE CABEÇALHO TABELA PRODUÇAO PREVENTIVA ====
 
 
                     const titlePrev = document.createElement('span')
@@ -788,7 +788,7 @@ document.getElementById('button').addEventListener('click', () => {
                     tdCidadePrev.innerHTML = 'CIDADE'
 
                     const tdConcluidaPrev = document.createElement('td')
-                    tdConcluidaPrev.className = 'tdConcluida' 
+                    tdConcluidaPrev.className = 'tdConcluida'
                     tdConcluidaPrev.innerHTML = 'CONCLUIDA'
 
                     const tdIniciadaPrev = document.createElement('td')
@@ -811,8 +811,8 @@ document.getElementById('button').addEventListener('click', () => {
                     tabelaPrev.append(totalPrev)
 
 
-                       // ============= DADOS PREVENTIVA
-               
+                    // ============= DADOS PREVENTIVA
+
                     const prevArc = data.filter(item => item.Cidade === 'ARACRUZ').filter(prev)
                     const prevCim = data.filter(item => item.Cidade === 'CACHOEIRO DE ITAPEMIRIM').filter(prev)
                     const prevCca = data.filter(item => item.Cidade === 'CARIACICA').filter(prev)
@@ -825,7 +825,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const prevVia = data.filter(item => item.Cidade === 'VIANA').filter(prev)
                     const prevVva = data.filter(item => item.Cidade === 'VILA VELHA').filter(prev)
                     const prevVta = data.filter(item => item.Cidade === 'VITORIA').filter(prev)
-     
+
                     // ======== PRODUÇAO PREV ====
 
 
@@ -856,10 +856,10 @@ document.getElementById('button').addEventListener('click', () => {
                     const colTotalArcPrev = document.getElementById('arc-preventiva')
                     colTotalArcPrev.append(tdTotalArcPrev)
 
-                    
+
 
                     // CACHOEIRO
-                    
+
                     const tdCimPrev = document.createElement('td')
                     tdCimPrev.innerHTML = 'CACHOEIRO'
                     const colCimPrev = document.getElementById('cim-preventiva')
@@ -995,7 +995,7 @@ document.getElementById('button').addEventListener('click', () => {
                     tdTotalLnsPrev.innerHTML = prevLns.filter(conIniNin).length
                     const colTotalLnsPrev = document.getElementById('lns-preventiva')
                     colTotalLnsPrev.append(tdTotalLnsPrev)
-                    
+
 
 
 
@@ -1025,7 +1025,7 @@ document.getElementById('button').addEventListener('click', () => {
                     const colTotalSmjPrev = document.getElementById('smj-preventiva')
                     colTotalSmjPrev.append(tdTotalSmjPrev)
 
-                    
+
 
                     // SÃO MATEUS
                     const tdSmtPrev = document.createElement('td')
@@ -1166,7 +1166,7 @@ document.getElementById('button').addEventListener('click', () => {
 
                     // TOTAL
                     const dataPrev = data.filter(prev)
-               
+
 
                     const tdPrev = document.createElement('td')
                     tdPrev.className = 'tdGpon'
@@ -1193,7 +1193,7 @@ document.getElementById('button').addEventListener('click', () => {
                     tdSumPrev.innerHTML = dataPrev.filter(conIniNin).length
                     const colSumPrev = document.getElementById('total-preventiva')
                     colSumPrev.append(tdSumPrev)
-                    
+
 
 
                     // ============= btn Download
@@ -1203,8 +1203,8 @@ document.getElementById('button').addEventListener('click', () => {
                     btnProducao.innerHTML = 'BAIXAR IMAGEM'
                     const btnProducao2 = document.getElementById('div-download')
                     btnProducao2.append(btnProducao)
-               
-          
+
+
                     let btnGenerator = document.querySelector('#btnDonwload')
                     let btnDownload = document.querySelector('.download')
 
