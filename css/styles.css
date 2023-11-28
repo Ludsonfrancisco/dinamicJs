@@ -6,13 +6,14 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #fcfcfc;
 }
 
-.container{
+.container {
   margin-top: 20px;
 }
+
 #canvasDown {
   display: grid;
   grid-template-areas:
@@ -20,10 +21,10 @@ body{
     'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
     'tabela-metalico tabela-metalico test test'
     'tabela-metalico tabela-metalico test test';
-  gap: 20px;
+  gap: 35px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:160px 160px 120px 100px;
-  inline-size:60%;
+  grid-template-rows: 160px 160px 120px 100px;
+  inline-size: 60%;
   margin: 0 auto;
   padding: 10px 0;
 }
@@ -51,7 +52,7 @@ body{
 #tabela-preventiva {
   grid-area: tabela-preventiva;
   /* border: 5px solid rgb(111, 41, 97); */
-  
+
 }
 
 #test {
@@ -59,7 +60,7 @@ body{
   /* border: 5px solid rgb(111, 41, 97); */
 }
 
-table{ 
+table {
   font-family: 'Roboto', sans-serif;
 
 }
@@ -70,13 +71,17 @@ tr td {
   border: 0.7px solid white;
 }
 
-tr#cabecalho, tr#cabecalho-metalico, tr#cabecalho-preventiva{
+tr#cabecalho,
+tr#cabecalho-metalico,
+tr#cabecalho-preventiva {
   width: 90px;
   height: 25px;
   font-weight: bold;
 }
 
-tr#total, tr#total-metalico, tr#total-preventiva{
+tr#total,
+tr#total-metalico,
+tr#total-preventiva {
   font-weight: bold;
   background-color: rgba(130, 124, 124, 0.3);
 }
@@ -86,77 +91,84 @@ td.tdCidade {
   width: 90px;
   background-color: #EEEEEE;
   color: #000;
-  font-size:12px;
-  box-shadow: 4px 2px 5px 0px rgba(0,0,0,0.75);
+  font-size: 12px;
+  box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 td.tdConcluida {
   width: 90px;
   background-color: #5B76FF;
   color: #000;
-  font-size:12px;
-  box-shadow:2px 4px 6px 1px rgb(65 72 217 / 63%);
+  font-size: 12px;
+  box-shadow: 2px 4px 6px 1px rgb(65 72 217 / 63%);
   border: none;
 }
 
-td.tdIniciada{
+td.tdIniciada {
   width: 90px;
   background-color: #00E340;
   color: #000;
-  font-size:12px;
-  box-shadow: 2px 4px 6px 1px rgba(0, 227, 64,0.5);
+  font-size: 12px;
+  box-shadow: 2px 4px 6px 1px rgba(0, 227, 64, 0.5);
   border: none;
 }
 
-td.tdNin{
+td.tdNin {
   width: 90px;
   background-color: #F2FF58;
-  font-size:12px;
+  font-size: 12px;
   color: #000;
-  box-shadow:2px 4px 6px 1px rgba(242, 255, 88, 0.85);
+  box-shadow: 2px 4px 6px 1px rgba(242, 255, 88, 0.85);
   border: none;
 }
 
-td.tdTotal{
+td.tdTotal {
   width: 90px;
   background-color: #EEEEEE;
-  font-size:12px;
+  font-size: 12px;
   color: #000;
-  box-shadow: 2px 4px 6px 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
   border: none;
 }
 
-#tdGpon, #tdMetalico, #tdPreventiva {
-  font-size:12px;
+#tdGpon,
+#tdMetalico,
+#tdPreventiva {
+  font-size: 12px;
   padding: 8px;
 }
 
-#tabela-gpon tr:not(#title-gpon, tr#total){
+#tabela-gpon tr:not(#title-gpon, tr#total) {
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-#tabela-metalico tr:not(#title-metalico,  tr#total-metalico){
+#tabela-metalico tr:not(#title-metalico, tr#total-metalico) {
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-#tabela-preventiva tr:not(#title-preventiva, tr#total-preventiva){
+#tabela-preventiva tr:not(#title-preventiva, tr#total-preventiva) {
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-#tabela-gpon  td, #tabela-metalico td, #tabela-preventiva td{
+#tabela-gpon td,
+#tabela-metalico td,
+#tabela-preventiva td {
   height: 25px;
   padding: 2px 5px;
 }
 
-canvas{
+canvas {
   display: none;
 }
-.download{
+
+.download {
   display: none;
 }
 
 
-#title-gpon, #title-metalico, #title-preventiva{
+#title-gpon,
+#title-metalico,
+#title-preventiva {
   display: block;
   font-size: 14px;
   font-weight: bold;
@@ -169,13 +181,13 @@ canvas{
 }
 
 
-#div-download{
-  margin: 15px 0 0 20% ;
+#div-download {
+  margin: 15px 0 0 20%;
 
 }
 
 
-#btnDonwload{
+#btnDonwload {
   cursor: pointer;
 }
 
@@ -222,24 +234,27 @@ canvas{
   background-color: rgb(51, 2, 2);
   box-shadow: none;
   color: white;
-} 
+}
 
-@media screen and (min-width: 1000px) and (max-width: 1368px){
+@media screen and (min-width: 1000px) and (max-width: 1368px) {
   #canvasDown {
     display: grid;
     grid-template-areas:
-        'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
-        'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
-        'tabela-metalico tabela-metalico test test'
-        'tabela-metalico tabela-metalico test test';
+      'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
+      'tabela-gpon tabela-gpon tabela-preventiva tabela-preventiva'
+      'tabela-metalico tabela-metalico test test'
+      'tabela-metalico tabela-metalico test test';
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 109px 145px 90px 100px;
     inline-size: 60%;
     margin: 0 auto;
     padding: 10px 0;
-}
-  #tabela-gpon td, #tabela-metalico td, #tabela-preventiva td {
+  }
+
+  #tabela-gpon td,
+  #tabela-metalico td,
+  #tabela-preventiva td {
     height: 20px;
     padding: 2px 2px;
   }
@@ -249,18 +264,23 @@ canvas{
 
 
 
-@media (max-width: 999px){
-  #canvasDown{
+@media (max-width: 999px) {
+  #canvasDown {
     display: flex;
     flex-direction: column;
   }
-  tr#cabecalho, tr#cabecalho-metalico, tr#cabecalho-preventiva{
+
+  tr#cabecalho,
+  tr#cabecalho-metalico,
+  tr#cabecalho-preventiva {
     width: 45px;
     height: 13px;
     font-weight: bold;
   }
 
-  #title-gpon, #title-metalico, #title-preventiva{
+  #title-gpon,
+  #title-metalico,
+  #title-preventiva {
     display: block;
     font-size: 12px;
     font-weight: bold;
@@ -272,53 +292,55 @@ canvas{
     color: #fff;
   }
 
-  #tdGpon, #tdMetalico, #tdPreventiva {
+  #tdGpon,
+  #tdMetalico,
+  #tdPreventiva {
     font-size: 12px;
-    
+
   }
-  
+
 
   td.tdCidade {
     width: 60px;
     background-color: #EEEEEE;
     color: #000;
-    font-size:10px;
-    box-shadow: 4px 2px 5px 0px rgba(0,0,0,0.75);
+    font-size: 10px;
+    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.75);
   }
-  
+
   td.tdConcluida {
     width: 60px;
     background-color: #5B76FF;
     color: #000;
-    font-size:10px;
-    box-shadow:2px 4px 6px 1px rgb(65 72 217 / 63%);
+    font-size: 10px;
+    box-shadow: 2px 4px 6px 1px rgb(65 72 217 / 63%);
     border: none;
   }
-  
-  td.tdIniciada{
+
+  td.tdIniciada {
     width: 60px;
     background-color: #00E340;
     color: #000;
-    font-size:10px;
-    box-shadow: 2px 4px 6px 1px rgba(0, 227, 64,0.5);
+    font-size: 10px;
+    box-shadow: 2px 4px 6px 1px rgba(0, 227, 64, 0.5);
     border: none;
   }
-  
-  td.tdNin{
+
+  td.tdNin {
     width: 60px;
     background-color: #F2FF58;
-    font-size:10px;
+    font-size: 10px;
     color: #000;
-    box-shadow:2px 4px 6px 1px rgba(242, 255, 88, 0.85);
+    box-shadow: 2px 4px 6px 1px rgba(242, 255, 88, 0.85);
     border: none;
   }
-  
-  td.tdTotal{
+
+  td.tdTotal {
     width: 60px;
     background-color: #EEEEEE;
-    font-size:10px;
+    font-size: 10px;
     color: #000;
-    box-shadow: 2px 4px 6px 1px rgba(0,0,0,0.2);
+    box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
     border: none;
   }
 
@@ -333,25 +355,23 @@ canvas{
     font-size: 10px;
   }
 
-  .container{
+  .container {
     margin-top: 3px;
   }
 
-  
-#producao h1{
-  text-align: center;
-  font-size: 36px;
-  color: #F15412;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  margin: 2px  0 0 0;
+
+  #producao h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #F15412;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin: 2px 0 0 0;
   }
 }
 
-@media (max-width: 800px){
-  #div-download{
+@media (max-width: 800px) {
+  #div-download {
     display: none;
   }
 }
-
-
