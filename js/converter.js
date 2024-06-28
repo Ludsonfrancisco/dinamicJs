@@ -86,6 +86,14 @@ document.getElementById('button').addEventListener('click', () => {
                     }
 
 
+
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M10')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M11')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M03')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N08')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N06')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N09')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1I02')
                     rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'PREV/BANDA LARGA')
                     rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'PREV/PÓS CONTATO')
                     rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'Prev/Pós Contato')
@@ -133,7 +141,6 @@ document.getElementById('button').addEventListener('click', () => {
                     const gponVva = dataVva.filter(gpon)
                     const gponVta = dataVta.filter(gpon)
                     const gponVia = dataVia.filter(gpon)
-
 
                     // ====CREATE CABEÇALHO TABELA PRODUÇAO GPON ====
                     // const titleProducao = document.createElement('h1')
@@ -410,6 +417,8 @@ document.getElementById('button').addEventListener('click', () => {
                     tdConSeaGpon.innerHTML = gponSea.filter(statusConcluida).length
                     const colConSeaGpon = document.getElementById('sea')
                     colConSeaGpon.append(tdConSeaGpon)
+
+                    console.log(gponSea.filter(statusConcluida))
 
                     const tdIniSeaGpon = document.createElement('td')
                     tdIniSeaGpon.innerHTML = gponSea.filter(statusIniciada).length
