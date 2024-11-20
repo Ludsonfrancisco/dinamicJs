@@ -87,11 +87,11 @@ document.getElementById('button').addEventListener('click', () => {
 
 
 
-                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M10')
+                    // rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M10')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M11')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M03')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N08')
-                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N06')
+                    // rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N06')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N09')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1I02')
                     rowObject = removeItem(rowObject, 'Detalhe da Atividade', 'PREV/BANDA LARGA')
