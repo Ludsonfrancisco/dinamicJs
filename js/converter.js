@@ -87,7 +87,7 @@ document.getElementById('button').addEventListener('click', () => {
 
 
 
-                    // rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M10')
+                    rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M10')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M11')
                     // rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1M03')
                     rowObject = removeItem(rowObject, 'ID de Armário', 'ESSEA_G1N08')
